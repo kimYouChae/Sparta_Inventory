@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum StatusType 
+{
+    Attack,
+    Defence,
+    HP,
+    CriticalHit
+}
+
 [System.Serializable]
 public class Character
 {
