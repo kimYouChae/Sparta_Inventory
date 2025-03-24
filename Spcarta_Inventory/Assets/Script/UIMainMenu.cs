@@ -24,7 +24,7 @@ public class UIMainMenu : MonoBehaviour
     private void OnoffPlayerStatus() 
     {
         var temp = UIManager.Instance.ShowPopUp<CharacterStatusPopUp>();
-        temp.SetUpPlayerStatus();
+        temp.SetUpPlayerStatus(CharacterManager.Instance.Character);
     }
 
     
