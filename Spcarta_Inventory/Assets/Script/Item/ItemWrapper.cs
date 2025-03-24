@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class ItemWrapper : ICsvParsable
 {
     
@@ -28,14 +29,14 @@ public class ItemWrapper : ICsvParsable
         itemToolTip = values[3];
 
         itemStatus = new List<StatusType>();
-        var temp = values[4].Split("-");
+        var temp = values[4].Split("-", StringSplitOptions.RemoveEmptyEntries); // 공백 무시 
         for (int i = 0; i < temp.Length; i++) 
         {
             itemStatus.Add((StatusType)Enum.Parse(typeof(StatusType), temp[i]));
         }
 
         itemStatusValue = new List<int>();
-        var var = values[5].Split("-");
+        var var = values[5].Split("-" , StringSplitOptions.RemoveEmptyEntries); // 공백 무시 
         for (int i = 0; i < temp.Length; i++)
         {
             itemStatusValue.Add(int.Parse(var[i]));

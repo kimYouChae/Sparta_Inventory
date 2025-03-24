@@ -4,8 +4,6 @@ using UnityEditor;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
-
-
 public class CSVToJsonWindow : EditorWindow
 {
     // 클래스 명 리스트 
@@ -60,7 +58,7 @@ public class CSVToJsonWindow : EditorWindow
         EditorUtility.DrawMemoBox(
             new string[] {
                 "1. 해당 클래스 명으로 된 CSV 파일이 존재해야 합니다.",
-                "2. Resource/CSV 폴더 내에 파일을 배치해주세요",
+                "2. Resource/CsvConverter 폴더 내에 파일을 배치해주세요",
                 "3. 해당 클래스는 ICsvParsable 인터페이스를 구현해야 합니다. "
             },
             EColor.Gray,
@@ -73,6 +71,9 @@ public class CSVToJsonWindow : EditorWindow
         {
             CsvToJsonConverter.CsvConverByName(className);
         }
+
+        // 여기 안넣어주면 Asset,Resource 등 폴더이름도 노랑색으로 됨 
+        EditorStyles.boldLabel.normal.textColor = originColor;
     }
 
     

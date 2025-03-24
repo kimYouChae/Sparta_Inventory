@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
         {
             uiPopUp = instance.GetComponent<UiPopUp>();
         }
-        catch (Exception e) { Debug.Log($"UIManager : {instance.name} 프리팹에서 GetComponent 오류 "); }
+        catch (Exception e) { Debug.Log($"UIManager : {instance.name} 프리팹에서 GetComponent 오류 {e}"); }
 
         // 항상 첫번째로 들어가게 insert
         popUps.Insert(0, uiPopUp);
