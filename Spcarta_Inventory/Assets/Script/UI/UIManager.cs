@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
         {
             popupInstance = Instantiate(upPrefab, canvas.transform);
         }
-        catch (Exception e) { Debug.Log($"UIManager : {upPrefab.name} 프리팹 생성 오류 "); }
+        catch (Exception e) { Debug.Log($"UIManager : {upPrefab.name} 프리팹 생성 오류 {e} "); }
 
         // 리스트에 넣은 후 return 
         return AddtoPopUpList(popupInstance);

@@ -11,10 +11,10 @@ public enum ItemType
 [System.Serializable]
 public class Item 
 {
-    [SerializeField] private int itemNum;
-    [SerializeField] private ItemType itemType;
-    [SerializeField] private string itemName;
-    [SerializeField] private string itemToolTip;
+    [SerializeField] protected int itemNum;
+    [SerializeField] protected ItemType itemType;
+    [SerializeField] protected string itemName;
+    [SerializeField] protected string itemToolTip;
 
     public Item(int n, ItemType t, string name, string tool) 
     {
@@ -30,6 +30,7 @@ public class Item
     public string ItemToolTip { get => itemToolTip; set => itemToolTip = value; }
 }
 
+[System.Serializable]
 public class Equip : Item
 {
     [SerializeField] private List<StatusType> itemStatus;
@@ -46,6 +47,7 @@ public class Equip : Item
 
 }
 
+[System.Serializable]
 public class UseItem : Item 
 {
     public UseItem(int n, ItemType ty, string name, string tool): base(n, ty, name, tool)
