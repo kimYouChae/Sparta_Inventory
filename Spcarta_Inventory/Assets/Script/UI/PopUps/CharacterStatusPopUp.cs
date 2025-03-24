@@ -13,4 +13,15 @@ public class CharacterStatusPopUp : UiPopUp
         backButton.onClick.AddListener(base.OffPanel);
     }
 
+    // 인벤토리 업데이트
+    public void SetUpPlayerStatus()
+    {
+        UpdateStatus();
+    }
+
+    public void UpdateStatus()
+    {
+
+    }
+
 }
