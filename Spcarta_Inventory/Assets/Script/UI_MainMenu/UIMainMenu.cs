@@ -18,7 +18,7 @@ public class UIMainMenu : MonoBehaviour
     private void OnoffInventrory() 
     {
         var temp = UIManager.Instance.ShowPopUp<InventoryPopUp>();
-        temp.SetUpInventory();
+        temp.SetUpInventory(ItemManager.Instance.ItemData);
     }
 
     private void OnoffPlayerStatus() 
