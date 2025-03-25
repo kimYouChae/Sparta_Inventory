@@ -13,6 +13,7 @@ public class ItemWrapper : ICsvParsable
     public string itemToolTip;
     public List<StatusType> itemStatus;
     public List<int> itemStatusValue;
+    public Equipped itemEquit;
 
     public void Parse(string[] values)
     {
@@ -41,5 +42,7 @@ public class ItemWrapper : ICsvParsable
         {
             itemStatusValue.Add(int.Parse(var[i]));
         }
+
+        itemEquit = (Equipped)Enum.Parse(typeof(Equipped), values[6]);
     }
 }
