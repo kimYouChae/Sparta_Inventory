@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ClickItemSlot : MonoBehaviour
+public class ClickItemSlot : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private int slotNum;
@@ -37,5 +38,11 @@ public class ClickItemSlot : MonoBehaviour
         }
         catch (Exception e) { Debug.Log($"ClickItemSlot - SetICon: {e}"); }
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // 클릭 시 인덱스 넘기기 
+        ItemManager.Instance.ClickItemSlot(slotNum);
     }
 }

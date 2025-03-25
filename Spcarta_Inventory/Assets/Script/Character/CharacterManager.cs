@@ -31,14 +31,35 @@ public class CharacterManager : MonoBehaviour
 
     private void Start()
     {
-        character = new Character(10f ,7f, 15, 3f);
+        character = new Character(10f, 7f, 15, 3f);
     }
 
-    public void UPDateCharacterState(float Attack = 0, float Defence = 0, float Hp = 0, float Critical = 0) 
+    public void UPDateCharacterState(float Attack = 0, float Defence = 0, float Hp = 0, float Critical = 0)
     {
         character.Attack += Attack;
         character.Defence += Defence;
         character.Hp += Hp;
         character.CriticalHit += Critical;
     }
+
+    public void UpdateCharaterState(StatusType sta , int value) 
+    {
+        switch (sta) 
+        {
+            case StatusType.Attack:
+                character.Attack += value;
+                break;
+            case StatusType.Defence: 
+                character.Defence += value; 
+                break;
+            case StatusType.HP: 
+                character.Hp += value; 
+                break;
+            case StatusType.CriticalHit: 
+                character.CriticalHit += value; 
+                break;
+        }
+    }
+
 }
+

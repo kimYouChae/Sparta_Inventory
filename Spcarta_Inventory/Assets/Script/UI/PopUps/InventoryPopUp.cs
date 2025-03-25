@@ -58,7 +58,7 @@ public class InventoryPopUp : UiPopUp
         }
     }
 
-    private void UpdateEquipSlot(List<Item> item) 
+    public void UpdateEquipSlot(List<Item> item) 
     {
         for (int i = 0; i < item.Count; i++)
         {

@@ -11,14 +11,11 @@ public class UIMainMenu : MonoBehaviour
 
     private void Start()
     {
-        inventoryButton.onClick.AddListener(OnoffInventrory);
+        // 캐릭터 
         characterInfoSetUpButton.onClick.AddListener(OnoffPlayerStatus);
-    }
-
-    private void OnoffInventrory() 
-    {
-        var temp = UIManager.Instance.ShowPopUp<InventoryPopUp>();
-        temp.SetUpInventory(ItemManager.Instance.ItemData);
+        
+        // 인벤토리 
+        inventoryButton.onClick.AddListener(ItemManager.Instance.InventoryUI);
     }
 
     private void OnoffPlayerStatus() 
