@@ -1,10 +1,10 @@
-itemNum,itemType,itemName,itemTooltip,statusType,statusValue
-0,Equiptable,검,공격력을 소폭 상승시켜 줍니다,Attack,10
-1,Equiptable,활,공격력을 상승시켜 줍니다,Attack,20
-2,Equiptable,방패,방어력을 소폭 상승시켜 줍니다,Defence,3
-3,Equiptable,망치 ,공격력을 상승시켜 줍니다,Attack,17
-4,Equiptable,투구 ,방어력을 상승시켜 줍니다,Defence,7
-5,Equiptable,반지 ,공격력과 방어력을 소폭 상승시켜 줍니다,Attack-Defence,4-8
-6,Equiptable,목걸이,공격력과 방어력을 상승시켜 줍니다,Attack-Defence,16-32
-7,Usable,물약,hp를 회복시켜 줍니다,-,-
-8,Usable,마나물약,마나를 회복시켜 줍니다,-,-
+itemNum,itemType,itemName,itemTooltip,statusType,statusValue,itemEquitType
+0,Equiptable,검,공격력을 소폭 상승시켜 줍니다,Attack,10,Yet
+1,Equiptable,활,공격력을 상승시켜 줍니다,Attack,20,Yet
+2,Equiptable,방패,방어력을 소폭 상승시켜 줍니다,Defence,3,Yet
+3,Equiptable,망치 ,공격력을 상승시켜 줍니다,Attack,17,Yet
+4,Equiptable,투구 ,방어력을 상승시켜 줍니다,Defence,7,Yet
+5,Equiptable,반지 ,공격력과 방어력을 소폭 상승시켜 줍니다,Attack-Defence,4-8,Yet
+6,Equiptable,목걸이,공격력과 방어력을 상승시켜 줍니다,Attack-Defence,16-32,Yet
+7,Usable,물약,hp를 회복시켜 줍니다,-,-,None
+8,Usable,마나물약,마나를 회복시켜 줍니다,-,-,None
