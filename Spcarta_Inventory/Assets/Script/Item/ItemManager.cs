@@ -31,6 +31,7 @@ public class ItemManager : MonoBehaviour
     private Sprite[] itemIcon;
 
     public List<Item> ItemData { get => itemData; set => itemData = value; }
+    public Sprite[] ItemIcon { get => itemIcon; set => itemIcon = value; }
 
     private void Awake()
     {

@@ -36,7 +36,7 @@ public class Item
     public ItemType ItemType { get => itemType; set => itemType = value; }
     public string ItemName { get => itemName; set => itemName = value; }
     public string ItemToolTip { get => itemToolTip; set => itemToolTip = value; }
-    protected Equipped EuipType { get => euipType; set => euipType = value; }
+    public Equipped EuipType { get => euipType; set => euipType = value; }
 }
 
 [System.Serializable]

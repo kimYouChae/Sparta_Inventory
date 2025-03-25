@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,7 +10,8 @@ public class InventoryPopUp : UiPopUp
     [Header("===Component===")]
     [SerializeField] Transform scrollContent;       // 스크롤 content
     [SerializeField] GameObject itemSlotPrefab;     // 슬롯 프리팹
-    [SerializeField] GameObject[] itemSlot;         // 생성한 아이템 슬롯 
+    [SerializeField] List<GameObject> itemSlot;         // 생성한 아이템 슬롯 
+    [SerializeField] List<GameObject> equiptText;       // 착용 [E] 이미지 
 
     [SerializeField] Button backButton;
 
@@ -27,20 +29,48 @@ public class InventoryPopUp : UiPopUp
     public void UpdateInventory(List<Item> item)
     {
         // 만들어진 슬롯이 없으면 -> 생성
-        if (itemSlot.Length <= 0)
+        if (itemSlot.Count <= 0)
             InitItemSlot(item);
 
         // 슬롯 이미지 업데이트
+        UpdateSlotImage(item);
 
         // 슬롯 착용 업데이트
-
+        UpdateEquipSlot(item);
     }
 
     private void UpdateSlotImage(List<Item> item ) 
     {
         for(int i = 0; i < item.Count; i++) 
         {
-            itemSlot[i].GetComponent<ClickItemSlot>().SetICon();
+            int currNum = item[i].ItemNum;
+            
+            ClickItemSlot cs;
+
+            try
+            {
+                cs = itemSlot[i].GetComponent<ClickItemSlot>();
+                cs.SetICon(ItemManager.Instance.ItemIcon[currNum]);
+
+            }
+            catch (Exception e) { Debug.Log($"InventoryPopUp - UpdateSlotImage: {e}"); }
+        
+        }
+    }
+
+    private void UpdateEquipSlot(List<Item> item) 
+    {
+        for (int i = 0; i < item.Count; i++)
+        {
+            try 
+            {
+                Equipped type = item[i].EuipType;
+                if (type == Equipped.Equipped)
+                    equiptText[i].SetActive(true);
+                else
+                    equiptText[i].SetActive(false);
+            }
+            catch (Exception e) { Debug.Log($"InventoryPopUp - UpdateEquipSlot: {e}"); }
         }
     }
 
@@ -51,7 +81,19 @@ public class InventoryPopUp : UiPopUp
         {
             var temp = InstanceSlot();
 
+            try
+            {
+                // 자식 리스트에 넣기 
+                equiptText.Add(temp.transform.GetChild(0).gameObject);
+            }
+            catch (Exception e) { Debug.Log($"InventoryPopUp - InitItemSlot : {e}"); }
+
+            // 리스트에 넣기 
+            itemSlot.Add(temp);
+
+            // num 넣기 
             temp.GetComponent<ClickItemSlot>().SlotNum = item[i].ItemNum;
+
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,29 @@ public class ClickItemSlot : MonoBehaviour
 
     public int SlotNum { get => slotNum; set => slotNum = value; }
 
-    private void Start()
+    private void Awake()
     {
         image = GetComponent<Image>();
     }
 
     public void SetICon(Sprite sp ) 
     {
-        image.sprite = sp;
+        if (sp == null) 
+        {
+            Debug.Log($"ClickItemSlot - SetICon: {sp} °¡ null");
+            return;
+        }
+        if(image == null)
+        {
+            Debug.Log($"ClickItemSlot - SetICon: {image} °¡ null");
+            return;
+        }
+
+        try
+        {
+            image.sprite = sp;
+        }
+        catch (Exception e) { Debug.Log($"ClickItemSlot - SetICon: {e}"); }
+
     }
 }
