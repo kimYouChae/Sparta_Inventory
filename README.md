@@ -1,5 +1,4 @@
 # Sparta Inventory 
-C# Text RPG Game
 
 
 ## 🖥️ 프로젝트 소개
