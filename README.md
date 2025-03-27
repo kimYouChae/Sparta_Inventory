@@ -7,7 +7,7 @@ Inventory를 제작했습니다.
 <br>
 ( 03.27 추가 )
 Csv to Json 툴을 사용해서 Json파일을 저장했습니다 파일이 없을 때 예외처리를 해놓지 않아  
-게임 실행하시기 전에 Window -> Utility -> Csv 클릭 후 ItemWrapper 입력 후 생성 하고 실행부탁드립니다
+게임 실행하시기 전에 Window -> Custon Editor -> Csv 클릭 후 ItemWrapper 입력 후 생성 하고 실행부탁드립니다
 
 ## 🕰️ 개발 기간
 * 25.03.24 ~ 25.03.25
